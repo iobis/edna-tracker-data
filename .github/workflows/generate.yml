@@ -21,6 +21,7 @@ jobs:
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v2.0.1
         with:
+          directory: ./
           envkey_PLUTOF_USER: ${{ secrets.PLUTOF_USER }}
           envkey_PLUTOF_PASS: ${{ secrets.PLUTOF_PASS }}
           envkey_PLUTOF_CLIENT_ID: ${{ secrets.PLUTOF_CLIENT_ID }}
