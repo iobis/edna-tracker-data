@@ -33,6 +33,7 @@ class Sample():
     plutof_id: int | None = None
     blank: bool | None = False
     name: str | None = None
+    status: str | None = "registered"
     size: float | None = None
     event_plutof_id: int | None = None
     event_begin: str | None = None
@@ -233,6 +234,11 @@ def main():
                 logger.error(f"Parent sampling area not found for sample {sample['name']}")
         else:
             logger.error(f"Sampling event not found for sample {sample['name']}")
+
+        if len(result.dnas) > 0:
+            result.status = "extracted"
+        elif result.event_begin is not None:
+            result.status = "collected"
 
         result_samples.append(result)
 
