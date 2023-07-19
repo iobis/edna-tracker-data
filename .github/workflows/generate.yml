@@ -19,12 +19,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Make envfile
-        uses: SpicyPizza/create-envfile@v2.0
+        uses: SpicyPizza/create-envfile@v2.0.1
         with:
           envkey_PLUTOF_USER: ${{ secrets.PLUTOF_USER }}
           envkey_PLUTOF_PASS: ${{ secrets.PLUTOF_PASS }}
           envkey_PLUTOF_CLIENT_ID: ${{ secrets.PLUTOF_CLIENT_ID }}
-          envkey_PLUTOF_PLUTOF_CLIENT_SECRET: ${{ secrets.PLUTOF_PLUTOF_CLIENT_SECRET }}
+          envkey_PLUTOF_CLIENT_SECRET: ${{ secrets.PLUTOF_PLUTOF_CLIENT_SECRET }}
           file_name: .env
       - name: List files
         run: ls
