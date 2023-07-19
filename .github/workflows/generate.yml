@@ -18,8 +18,6 @@ jobs:
           envkey_PLUTOF_CLIENT_ID: ${{ secrets.PLUTOF_CLIENT_ID }}
           envkey_PLUTOF_PLUTOF_CLIENT_SECRET: ${{ secrets.PLUTOF_PLUTOF_CLIENT_SECRET }}
           file_name: .env
-      - name: List files
-        run: ls
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Set up Python
@@ -28,6 +26,8 @@ jobs:
           python-version: '3.10'
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: List files
+        run: ls
       - name: Generate data
         run: python index.py
       - name: Commit data
