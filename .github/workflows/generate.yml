@@ -28,7 +28,7 @@ jobs:
           envkey_PLUTOF_CLIENT_SECRET: ${{ secrets.PLUTOF_PLUTOF_CLIENT_SECRET }}
           file_name: .env
       - name: List files
-        run: ls
+        run: ls -al
       - name: Generate data
         run: python index.py
       - name: Commit data
