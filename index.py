@@ -60,6 +60,7 @@ def get_token() -> str:
             "client_secret": os.environ.get("PLUTOF_CLIENT_SECRET"),
             "grant_type": "password"
         })
+        print(res.content)
         data = res.json()
         token = data["access_token"]
     return token
