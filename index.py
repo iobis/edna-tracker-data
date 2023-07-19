@@ -51,6 +51,7 @@ class Sample():
 def get_token() -> str:
     global token
     if token is None:
+        logger.info(f"Getting token for {os.environ.get('PLUTOF_USER')}")
         url = "https://api.plutof.ut.ee/v1/public/auth/token/"
         res = requests.post(url, data={
             "username": os.environ.get("PLUTOF_USER"),
@@ -70,7 +71,7 @@ def paginate(url: str, use_data: bool=False) -> list:
     items = []
     while True:
         page_url = url + str(page)
-        logger.info(page_url)
+        logger.debug(page_url)
         res = session.get(page_url, headers={
             "Authorization": f"Bearer {token}",
             "User-Agent": "eDNA sample tracker"
@@ -92,7 +93,7 @@ def paginate(url: str, use_data: bool=False) -> list:
 
 def get_object(url: str) -> dict | None:
     token = get_token()
-    logger.info(url)
+    logger.debug(url)
     res = session.get(url, headers={
         "Authorization": f"Bearer {token}",
         "User-Agent": "eDNA sample tracker"
