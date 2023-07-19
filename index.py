@@ -6,6 +6,7 @@ import os
 from dotenv import load_dotenv
 import requests_cache
 from dataclasses import dataclass, asdict, field
+from datetime import datetime
 
 
 logging.basicConfig(level=logging.INFO)
@@ -244,6 +245,7 @@ def main():
 
     with open("data.json", "w") as data_file:
         json.dump({
+            "created": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"),
             "sites": [asdict(result) for result in result_sites],
             "samples": [asdict(result) for result in result_samples],
         }, data_file, indent=2)
