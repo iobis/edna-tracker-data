@@ -18,6 +18,8 @@ jobs:
           envkey_PLUTOF_CLIENT_ID: ${{ secrets.PLUTOF_CLIENT_ID }}
           envkey_PLUTOF_PLUTOF_CLIENT_SECRET: ${{ secrets.PLUTOF_PLUTOF_CLIENT_SECRET }}
           file_name: .env
+      - name: List files
+        run: ls
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Set up Python
