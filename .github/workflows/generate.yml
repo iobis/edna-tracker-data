@@ -37,9 +37,8 @@ jobs:
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
-          git pull
           git checkout -b data
           mv data.json generated.json
           git add generated.json
           git commit -m "Update data"
-          git push origin data
+          git push --force origin data
