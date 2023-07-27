@@ -7,6 +7,9 @@ from dotenv import load_dotenv
 import requests_cache
 from dataclasses import dataclass, asdict, field
 from datetime import datetime
+from unidecode import unidecode
+import re
+from info import site_info
 
 
 logging.basicConfig(level=logging.INFO)
@@ -19,6 +22,8 @@ token = None
 @dataclass
 class Site():
     name: str | None = None
+    simplified_name: str | None = None
+    url: str | None = None
     plutof_id: int | None = None
     locality: str | None = None
 
@@ -167,6 +172,15 @@ def find_id(url: str) -> int:
     return int(url.split("/")[-2])
 
 
+def simplify_name(name: str) -> str:
+    return re.sub(r"_+", "_", re.sub(r"\W+", "_", unidecode(name).lower()))
+
+def get_site_info_dict():
+    site_dict = dict()
+    for site in site_info:
+        site_dict[simplify_name(site["name"])] = site
+    return site_dict
+
 def main():
 
     result_samples = []
@@ -178,12 +192,17 @@ def main():
     areas_dict = fetch_areas_for_events(list(events_dict.values()))
     parent_areas_dict = fetch_parent_areas_for_areas(list(areas_dict.values()))
     dnas_dict = fetch_dnas_for_samples(samples)
+    site_info_dict = get_site_info_dict()
 
     for area in parent_areas_dict.values():
         result = Site()
         result.name = area["name"]
+        result.simplified_name = simplify_name(result.name)
         result.plutof_id = area["id"]
         result.locality = area["locality_text"]
+        if result.simplified_name in site_info_dict:
+            site_info = site_info_dict[result.simplified_name]
+            result.url = site_info["url"]
         result_sites.append(result)
 
     for sample in samples:
