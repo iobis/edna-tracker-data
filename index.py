@@ -24,6 +24,7 @@ class Site():
     name: str | None = None
     simplified_name: str | None = None
     url: str | None = None
+    article: str | None = None
     plutof_id: int | None = None
     locality: str | None = None
 
@@ -203,6 +204,7 @@ def main():
         if result.simplified_name in site_info_dict:
             site_info = site_info_dict[result.simplified_name]
             result.url = site_info["url"]
+            result.article = site_info["article"]
         result_sites.append(result)
 
     for sample in samples:
