@@ -53,6 +53,7 @@ class Sample():
     parent_area_plutof_id: int | None = None
     parent_area_locality: str | None = None
     parent_area_name: str | None = None
+    simplified_name: str | None = None
     dnas: list[Dna] = field(default_factory=list)
 
 
@@ -249,6 +250,7 @@ def main():
                     result.parent_area_plutof_id = parent_samplingarea["id"]
                     result.parent_area_locality = parent_samplingarea["locality_text"]
                     result.parent_area_name = parent_samplingarea["name"]
+                    result.simplified_name = simplify_name(result.parent_area_name)
 
                 else:
                     logger.error(f"Parent sampling area not found for sample {sample['name']}")
