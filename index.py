@@ -85,6 +85,8 @@ def paginate(url: str, use_data: bool=False) -> list:
             "Authorization": f"Bearer {token}",
             "User-Agent": "eDNA sample tracker"
         })
+        if res.status_code == 403:
+            raise Exception("Forbidden 403")
         if res.status_code != 200:
             break
         else:
