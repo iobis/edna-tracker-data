@@ -3,7 +3,7 @@ name: Generate Data
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '30 12 * * *'
   push:
     branches:
       - master
