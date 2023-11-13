@@ -9,7 +9,7 @@ from dataclasses import dataclass, asdict, field
 from datetime import datetime
 from unidecode import unidecode
 import re
-from info import site_info
+from info import site_info, sequenced_samples
 
 
 logging.basicConfig(level=logging.INFO)
@@ -261,7 +261,9 @@ def main():
         else:
             logger.error(f"Sampling event not found for sample {sample['name']}")
 
-        if len(result.dnas) > 0:
+        if result.name in sequenced_samples:
+            result.status = "sequenced"
+        elif len(result.dnas) > 0:
             result.status = "extracted"
         elif result.event_begin is not None:
             result.status = "collected"
