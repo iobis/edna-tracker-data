@@ -44,6 +44,7 @@ class Sample():
     size: float | None = None
     event_plutof_id: int | None = None
     event_begin: str | None = None
+    event_description: str | None = None
     area_plutof_id: int | None = None
     area_locality: str | None = None
     area_name: str | None = None
@@ -233,6 +234,7 @@ def main():
 
             result.event_plutof_id = samplingevent["id"]
             result.event_begin = samplingevent["timespan_begin"]
+            result.event_description = samplingevent["description"]
 
             if "samplingarea" in samplingevent and samplingevent["samplingarea"] is not None:
                 samplingarea_id = find_id(samplingevent["samplingarea"])
