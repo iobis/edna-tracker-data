@@ -10,6 +10,7 @@ from datetime import datetime
 from unidecode import unidecode
 import re
 from info import site_info, sequenced_samples
+import csv
 
 
 logging.basicConfig(level=logging.INFO)
@@ -56,6 +57,7 @@ class Sample():
     parent_area_name: str | None = None
     simplified_name: str | None = None
     dnas: list[Dna] = field(default_factory=list)
+    station: str | None = None
 
 
 def get_token() -> str:
@@ -188,6 +190,17 @@ def get_site_info_dict():
 
 def main():
 
+    # read stations info from local file
+
+    sample_dict = dict()
+
+    with open("supplementary_info/stations.csv", "r") as stations_file:
+        samples = csv.DictReader(stations_file)
+        for sample in samples:
+            sample_dict[sample["materialSampleID"]] = sample["station"]
+
+    # fetch plutof data
+
     result_samples = []
     result_sites = []
 
@@ -217,6 +230,9 @@ def main():
         result.plutof_id = sample["id"]
         result.name = sample["name"]
         result.size = float(sample["size"]) if sample["size"] != "" else None
+
+        if sample["name"] in sample_dict:
+            result.station = sample_dict[sample["name"]]
 
         if sample["id"] in blank_samples:
             result.blank = True
