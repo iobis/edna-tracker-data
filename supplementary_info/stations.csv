@@ -59,23 +59,23 @@ higherGeography,materialSampleID,station
 "Banc d'Arguin National Park",EE0296,pnba
 "Banc d'Arguin National Park",EE0299,pnba
 "Banc d'Arguin National Park",EE0302,pnba
-"Belize Barrier Reef Reserve System","EE0323,swcmr
-"Belize Barrier Reef Reserve System","EE0324,bcmr
-"Belize Barrier Reef Reserve System","EE0325,glovers_reef
-"Belize Barrier Reef Reserve System","EE0326,glovers_reef
-"Belize Barrier Reef Reserve System","EE0417,bcmr
-"Belize Barrier Reef Reserve System","EE0418,swcmr
-"Belize Barrier Reef Reserve System","EE0419,bcmr
-"Belize Barrier Reef Reserve System","EE0420,scmr
-"Belize Barrier Reef Reserve System","EE0421,bcmr
-"Belize Barrier Reef Reserve System","EE0422,bacalar_chico
-"Belize Barrier Reef Reserve System","EE0423,scmr
-"Belize Barrier Reef Reserve System","EE0424,scmr
-"Belize Barrier Reef Reserve System","EE0425,glovers_reef
-"Belize Barrier Reef Reserve System","EE0426,swcmr
-"Belize Barrier Reef Reserve System","EE0428,glovers_reef
-"Belize Barrier Reef Reserve System","EE0429,swcmr
-"Belize Barrier Reef Reserve System","EE0477,scmr
+"Belize Barrier Reef Reserve System",EE0323,swcmr
+"Belize Barrier Reef Reserve System",EE0324,bcmr
+"Belize Barrier Reef Reserve System",EE0325,glovers_reef
+"Belize Barrier Reef Reserve System",EE0326,glovers_reef
+"Belize Barrier Reef Reserve System",EE0417,bcmr
+"Belize Barrier Reef Reserve System",EE0418,swcmr
+"Belize Barrier Reef Reserve System",EE0419,bcmr
+"Belize Barrier Reef Reserve System",EE0420,scmr
+"Belize Barrier Reef Reserve System",EE0421,bcmr
+"Belize Barrier Reef Reserve System",EE0422,bacalar_chico
+"Belize Barrier Reef Reserve System",EE0423,scmr
+"Belize Barrier Reef Reserve System",EE0424,scmr
+"Belize Barrier Reef Reserve System",EE0425,glovers_reef
+"Belize Barrier Reef Reserve System",EE0426,swcmr
+"Belize Barrier Reef Reserve System",EE0428,glovers_reef
+"Belize Barrier Reef Reserve System",EE0429,swcmr
+"Belize Barrier Reef Reserve System",EE0477,scmr
 "Brazilian Atlantic Islands: Fernando de Noronha and Atol das Rocas Reserves",EE0430,sueste
 "Brazilian Atlantic Islands: Fernando de Noronha and Atol das Rocas Reserves",EE0431,cagarras
 "Brazilian Atlantic Islands: Fernando de Noronha and Atol das Rocas Reserves",EE0435,baia_dos_delfines
@@ -89,14 +89,18 @@ higherGeography,materialSampleID,station
 "Brazilian Atlantic Islands: Fernando de Noronha and Atol das Rocas Reserves",EE0454,sueste
 "Brazilian Atlantic Islands: Fernando de Noronha and Atol das Rocas Reserves",EE0455,cagarras
 "Cocos Island National Park",EE0163,taza_de_te
+"Cocos Island National Park",EE0164,pni
 "Cocos Island National Park",EE0165,montagne
 "Cocos Island National Park",EE0166,montagne
 "Cocos Island National Park",EE0167,roca sucia
 "Cocos Island National Park",EE0168,dos_amigos
+"Cocos Island National Park",EE0174,pni
 "Cocos Island National Park",EE0175,manuelita
+"Cocos Island National Park",EE0176,pni
 "Cocos Island National Park",EE0177,dos_amigos
 "Cocos Island National Park",EE0178,taza_de_te
 "Cocos Island National Park",EE0179,montagne
+"Cocos Island National Park",EE0180,pni
 "Cocos Island National Park",EE0181,montagne
 "Cocos Island National Park",EE0182,dos_amigos
 "Cocos Island National Park",EE0183,roca_sucia
@@ -151,7 +155,10 @@ higherGeography,materialSampleID,station
 "Everglades National Park",EE0414,north_eagle_key
 "Everglades National Park",EE0415,north_eagle_key
 "Everglades National Park",EE0416,north_eagle_key
+"French Austral Lands and Seas",EE0001,amsterdam
+"French Austral Lands and Seas",EE0002,ile_haute
 "French Austral Lands and Seas",EE0003,baie_des_swains
+"French Austral Lands and Seas",EE0004,amsterdam
 "French Austral Lands and Seas",EE0005,armor
 "French Austral Lands and Seas",EE0006,baie_des_swains
 "French Austral Lands and Seas",EE0007,armor
@@ -161,15 +168,19 @@ higherGeography,materialSampleID,station
 "French Austral Lands and Seas",EE0013,ile_haute
 "French Austral Lands and Seas",EE0015,ile_haute
 "French Austral Lands and Seas",EE0016,armor
+"French Austral Lands and Seas",EE0017,amsterdam
 "French Austral Lands and Seas",EE0018,ile_haute
+"French Austral Lands and Seas",EE0019,amsterdam
 "French Austral Lands and Seas",EE0020,suhm
 "French Austral Lands and Seas",EE0021,suhm
 "French Austral Lands and Seas",EE0022,baie_des_swains
 "French Austral Lands and Seas",EE0087,armor
+"French Austral Lands and Seas",EE0127,amsterdam
 "French Austral Lands and Seas",EE0147,ile_haute
 "Gulf of Porto: Calanche of Piana, Gulf of Girolata, Scandola Reserve",EE0265,foccocara
 "Gulf of Porto: Calanche of Piana, Gulf of Girolata, Scandola Reserve",EE0301,ficaghjola
 "Gulf of Porto: Calanche of Piana, Gulf of Girolata, Scandola Reserve",EE0303,ficaghjola
+"Gulf of Porto: Calanche of Piana, Gulf of Girolata, Scandola Reserve",EE0304,elbu
 "Gulf of Porto: Calanche of Piana, Gulf of Girolata, Scandola Reserve",EE0305,ficaghjola
 "Gulf of Porto: Calanche of Piana, Gulf of Girolata, Scandola Reserve",EE0306,ficaghjola
 "Gulf of Porto: Calanche of Piana, Gulf of Girolata, Scandola Reserve",EE0307,elbu
@@ -210,17 +221,21 @@ higherGeography,materialSampleID,station
 "Lord Howe Island Group",EE0079,sylphs_hole
 "Lord Howe Island Group",EE0130,erscotts_hole
 "Lord Howe Island Group",EE0132,erscotts_hole
+"Lord Howe Island Group",EE0138,erscotts_hole
 "Lord Howe Island Group",EE0140,north_bay
 "Lord Howe Island Group",EE0141,north_bay
 "Lord Howe Island Group",EE0143,comets_hole
 "Lord Howe Island Group",EE0145,sylphs_hole
+"Lord Howe Island Group",EE0146,far_rocks
 "Lord Howe Island Group",EE0340,far_rocks
 "Lord Howe Island Group",EE0341,comets_hole
 "Lord Howe Island Group",EE0352,far_rocks
 "Lord Howe Island Group",EE0353,far_rocks
+"Lord Howe Island Group",EE0354,sylphs_hole
 "Lord Howe Island Group",EE0355,north_bay
 "Lord Howe Island Group",EE0366,north_bay
 "Lord Howe Island Group",EE0367,erscotts_hole
+"Lord Howe Island Group",EE0368,comets_hole
 "Lord Howe Island Group",EE0369,comets_hole
 "Lord Howe Island Group",EE0370,sylphs_hole
 "Ningaloo Coast",EE0327,jurabi_coastal_park
@@ -263,6 +278,14 @@ higherGeography,materialSampleID,station
 "Peninsula Valdès",EE0235,valdes_station_4
 "Peninsula Valdès",EE0236,valdes_station_5
 "Peninsula Valdès",EE0252,valdes_station_5
+"Sanganeb Marine National Park and Dungonab Bay \u2013 Mukkawar Island Marine National Park",EE0050,guba_khamsa
+"Sanganeb Marine National Park and Dungonab Bay \u2013 Mukkawar Island Marine National Park",EE0054,jabal_mugarsum
+"Sanganeb Marine National Park and Dungonab Bay \u2013 Mukkawar Island Marine National Park",EE0056,jabal_mugarsum
+"Sanganeb Marine National Park and Dungonab Bay \u2013 Mukkawar Island Marine National Park",EE0057,actof_dongunab
+"Sanganeb Marine National Park and Dungonab Bay \u2013 Mukkawar Island Marine National Park",EE0108,actof_dongunab
+"Sanganeb Marine National Park and Dungonab Bay \u2013 Mukkawar Island Marine National Park",EE0113,actof_dongunab
+"Sanganeb Marine National Park and Dungonab Bay \u2013 Mukkawar Island Marine National Park",EE0114,jabal_mugarsum
+"Sanganeb Marine National Park and Dungonab Bay \u2013 Mukkawar Island Marine National Park",EE0116,guba_khamsa
 "Shark Bay, Western Australia",EE0043,fowlers_camp
 "Shark Bay, Western Australia",EE0044,fowlers_camp
 "Shark Bay, Western Australia",EE0045,monkey_mia
@@ -274,6 +297,7 @@ higherGeography,materialSampleID,station
 "Shark Bay, Western Australia",EE0072,debault_creek
 "Shark Bay, Western Australia",EE0078,sandy_bay
 "Shark Bay, Western Australia",EE0082,debault_creek
+"Shark Bay, Western Australia",EE0086,petit_point
 "Shark Bay, Western Australia",EE0094,fowlers_camp
 "Shark Bay, Western Australia",EE0097,monkey_mia
 "Shark Bay, Western Australia",EE0107,sandy_bay
@@ -282,6 +306,13 @@ higherGeography,materialSampleID,station
 "Shark Bay, Western Australia",EE0122,debault_creek
 "Shark Bay, Western Australia",EE0123,sandy_bay
 "Shark Bay, Western Australia",EE0124,petit_point
+"Socotra Archipelago",EE0524,shoeb_lagoon
+"Socotra Archipelago",EE0526,di_hamri
+"Socotra Archipelago",EE0528,roosh_mpa
+"Socotra Archipelago",EE0531,ditwh_pa
+"Socotra Archipelago",EE0537,di_hamri
+"Socotra Archipelago",EE0539,qariah
+"Socotra Archipelago",EE0541,mahfarhin_qasharihan_mpa
 "The Sundarbans",EE0330,sundarbans_5
 "The Sundarbans",EE0331,sundarbans_3
 "The Sundarbans",EE0332,sundarbans_2
@@ -351,12 +382,17 @@ higherGeography,materialSampleID,station
 "Wadden Sea",EE0196,hjerting
 "Wadden Sea",EE0197,hjerting
 "Wadden Sea",EE0198,hjerting
+"Wadden Sea",EE0210,wilhelmshaven
 "Wadden Sea",EE0211,neuwerk
 "Wadden Sea",EE0212,neuwerk
 "Wadden Sea",EE0213,hjerting
 "Wadden Sea",EE0222,den_oever
 "Wadden Sea",EE0223,den_oever
+"Wadden Sea",EE0223,wilhelmshaven
+"Wadden Sea",EE0224,wilhelmshaven
 "Wadden Sea",EE0226,neuwerk
+"Wadden Sea",EE0227,wilhelmshaven
+"Wadden Sea",EE0228,wilhelmshaven
 "Wadden Sea",EE0522,den_oever
 "Wadden Sea",EE0529,den_oever
 "iSimangaliso Wetland Park",EE0371,st_lucia_lake
