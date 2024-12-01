@@ -15,13 +15,36 @@ import csv
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-session = requests_cache.CachedSession(expire_after=60*15)
 load_dotenv()
-token = None
+
+
+def get_token() -> str:
+    logger.info(f"Getting token for {os.environ.get('PLUTOF_USER')}")
+    url = "https://api.plutof.ut.ee/v1/public/auth/token/"
+    headers = {"User-Agent": "eDNA sample tracker"}
+    client_data = {
+        "username": os.environ.get("PLUTOF_USER"),
+        "password": os.environ.get("PLUTOF_PASSWORD"),
+        "client_id": os.environ.get("PLUTOF_CLIENT_ID"),
+        "client_secret": os.environ.get("PLUTOF_CLIENT_SECRET"),
+        "grant_type": "password",
+    }
+    res = requests.post(url, data=client_data, headers=headers)
+    data = res.json()
+
+    return data["access_token"]
+
+
+token = get_token()
+session = requests_cache.CachedSession(expire_after=60*15)
+session.headers.update({
+    "User-Agent": "eDNA sample tracker",
+    "Authorization": f"Bearer {token}",
+})
 
 
 @dataclass
-class Site():
+class Site:
     name: str | None = None
     simplified_name: str | None = None
     url: str | None = None
@@ -31,13 +54,13 @@ class Site():
 
 
 @dataclass
-class Dna():
+class Dna:
     plutof_id: int | None = None
     concentration: float | None = None
 
 
 @dataclass
-class Sample():
+class Sample:
     plutof_id: int | None = None
     blank: bool | None = False
     name: str | None = None
@@ -60,37 +83,18 @@ class Sample():
     station: str | None = None
 
 
-def get_token() -> str:
-    global token
-    if token is None:
-        logger.info(f"Getting token for {os.environ.get('PLUTOF_USER')}")
-        url = "https://api.plutof.ut.ee/v1/public/auth/token/"
-        res = requests.post(url, data={
-            "username": os.environ.get("PLUTOF_USER"),
-            "password": os.environ.get("PLUTOF_PASSWORD"),
-            "client_id": os.environ.get("PLUTOF_CLIENT_ID"),
-            "client_secret": os.environ.get("PLUTOF_CLIENT_SECRET"),
-            "grant_type": "password"
-        })
-        data = res.json()
-        token = data["access_token"]
-    return token
-
-
-def paginate(url: str, use_data: bool=False) -> list:
-    token = get_token()
+def paginate(url: str, use_data: bool = False) -> list:
     page = 1
     items = []
+
     while True:
         page_url = url + str(page)
         logger.debug(page_url)
-        res = session.get(page_url, headers={
-            "Authorization": f"Bearer {token}",
-            "User-Agent": "eDNA sample tracker"
-        })
+        res = session.get(page_url)
+
         if res.status_code == 403:
             raise Exception("Forbidden 403")
-        if res.status_code != 200:
+        elif res.status_code != 200:
             break
         else:
             results = res.json()
@@ -106,12 +110,8 @@ def paginate(url: str, use_data: bool=False) -> list:
 
 
 def get_object(url: str) -> dict | None:
-    token = get_token()
     logger.debug(url)
-    res = session.get(url, headers={
-        "Authorization": f"Bearer {token}",
-        "User-Agent": "eDNA sample tracker"
-    })
+    res = session.get(url)
     if res.status_code != 200:
         return None
     else:
@@ -147,7 +147,7 @@ def fetch_dnas_for_samples(samples: list[dict]) -> dict[int, dict]:
     dna_dict = dict()
     sample_ids = set((sample["id"] for sample in samples))
     for sample_id in sample_ids:
-        url  = f"https://api.plutof.ut.ee/v1/dna-lab/dnas/?include=dna_extraction&material_sample={sample_id}&ordering=-id&page[size]=20&page[number]="
+        url = f"https://api.plutof.ut.ee/v1/dna-lab/dnas/?include=dna_extraction&material_sample={sample_id}&ordering=-id&page[size]=20&page[number]="
         dnas = paginate(url, use_data=True)
         if len(dnas) > 0:
             dna_dict[sample_id] = dnas
@@ -182,11 +182,13 @@ def find_id(url: str) -> int:
 def simplify_name(name: str) -> str:
     return re.sub(r"_+", "_", re.sub(r"\W+", "_", unidecode(name).lower()))
 
+
 def get_site_info_dict():
     site_dict = dict()
     for site in site_info:
         site_dict[simplify_name(site["name"])] = site
     return site_dict
+
 
 def main():
 
