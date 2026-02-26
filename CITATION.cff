@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: eDNA Tracker Data
+type: software
+abstract: GitHub action for transforming eDNA samples metadata from PlutoF
+url: https://github.com/iobis/edna-tracker-data
+license: MIT
+authors:
+  - given-names: Pieter
+    family-names: Provoost
+    orcid: "https://orcid.org/0000-0002-4236-0384"
+  - alias: SSuominen1
+    orcid: "https://orcid.org/0000-0001-9401-8460"
+  - given-names: GitHub
+    family-names: Actions
+  - family-names: SSuominen1
+  - name: Intergovernmental Oceanographic Commission of UNESCO
+    alias: IOC-UNESCO
+    website: "https://obis.org"
+date-released: 2024-10-25
